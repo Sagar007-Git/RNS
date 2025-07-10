@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-github-canvas-default text-github-fg-default font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* GitHub Button Styles */
+  .btn-primary {
+    @apply bg-github-accent-emphasis text-github-fg-onEmphasis px-4 py-2 rounded-github text-sm font-medium
+           border border-transparent transition-all duration-200 ease-out
+           hover:bg-github-accent-fg
+           focus:ring-2 focus:ring-github-accent-fg focus:ring-offset-2 focus:ring-offset-github-canvas-default
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-github-canvas-subtle text-github-fg-default px-4 py-2 rounded-github text-sm font-medium;
+    @apply border border-github-border-default transition-all duration-200 ease-out;
+    @apply hover:bg-github-canvas-overlay hover:border-github-border-subtle;
+    @apply focus:ring-2 focus:ring-github-accent-fg focus:ring-offset-2 focus:ring-offset-github-canvas-default;
+  }
+
+  .btn-invisible {
+    @apply text-github-fg-default px-2 py-1 rounded-github text-sm font-medium;
+    @apply border border-transparent transition-all duration-200 ease-out;
+    @apply hover:bg-github-canvas-subtle;
+  }
+
+  /* GitHub Card Styles */
+  .card-github {
+    @apply bg-github-canvas-overlay border border-github-border-default rounded-github p-6;
+    @apply transition-all duration-200 ease-out;
+    @apply hover:border-github-border-subtle;
+  }
+
+  /* GitHub Input Styles */
+  .input-github {
+    @apply bg-github-canvas-default text-github-fg-default px-3 py-2 rounded-github text-sm;
+    @apply border border-github-border-default transition-all duration-200 ease-out;
+    @apply focus:border-github-accent-fg focus:ring-2 focus:ring-github-accent-muted focus:outline-none;
+    @apply placeholder:text-github-fg-subtle;
+  }
+
+  /* GitHub Code Block Styles */
+  .code-github {
+    @apply bg-github-canvas-overlay text-github-fg-default p-4 rounded-github text-sm font-mono;
+    @apply border border-github-border-default overflow-x-auto;
+  }
+
+  /* GitHub Navigation Styles */
+  .nav-github {
+    @apply bg-github-canvas-default border-b border-github-border-default;
+    backdrop-filter: blur(12px);
+  }
+
+  /* GitHub Dropdown Styles */
+  .dropdown-github {
+    @apply bg-github-canvas-overlay border border-github-border-default rounded-github shadow-github-lg;
+    @apply py-2 min-w-[160px];
+  }
+
+  .dropdown-item-github {
+    @apply px-4 py-2 text-sm text-github-fg-default transition-colors duration-200;
+    @apply hover:bg-github-canvas-subtle cursor-pointer;
+  }
+
+  /* GitHub Loading Spinner */
+  .spinner-github {
+    @apply inline-block w-4 h-4 border-2 border-github-border-default border-t-github-accent-fg rounded-full;
+    animation: spin 1s linear infinite;
+  }
+
+  /* GitHub Focus States */
+  .focus-github {
+    @apply focus:ring-2 focus:ring-github-accent-fg focus:ring-offset-2 focus:ring-offset-github-canvas-default focus:outline-none;
+  }
+
+  /* GitHub Hover Effects */
+  .hover-github {
+    @apply transition-all duration-200 ease-out hover:bg-github-canvas-subtle;
+  }
+
+  /* GitHub Text Styles */
+  .text-github-primary {
+    @apply text-github-fg-default;
+  }
+
+  .text-github-secondary {
+    @apply text-github-fg-muted;
+  }
+
+  .text-github-accent {
+    @apply text-github-accent-fg;
+  }
+
+  .text-github-success {
+    @apply text-github-success-fg;
+  }
+
+  .text-github-danger {
+    @apply text-github-danger-fg;
+  }
+
+  .text-github-warning {
+    @apply text-github-attention-fg;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
